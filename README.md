@@ -24,7 +24,7 @@ This script fetches financial data for a list of assets (e.g., stocks) from Yaho
 2. Navigate to the project directory:
    
     ```bash
-    cd Portfolio-Optimization.py
+    cd Optimizacion de Portfolio.py
 
 3. Install the required Python packages:
 

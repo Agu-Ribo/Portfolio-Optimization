@@ -5,10 +5,12 @@ import datetime as dt
 from pandas_datareader import data as pdr
 
 plt.style.use('seaborn-colorblind')
+
 # Activos
 tickers = ['GGAL','BMA','YPF','TS','MELI']
 prices = pdr.get_data_yahoo(tickers, start = '2015-01-01', end = dt.date.today())['Adj Close']
 returns = prices.pct_change()
+
 # Graficamos la evolución de precios
 plt.figure(figsize=(14, 7))
 for i in prices.columns.values:
@@ -41,7 +43,7 @@ def portfolio_metrics(weights, mean_returns, cov_matrix):
  std = np.sqrt(np.dot(weights.T, np.dot(cov_matrix, weights)))
  return ret, std
 
-# armamos los portafolios random
+# Armamos los portafolios random
 def random_portfolios(num_port, mean_returns, cov_matrix):
   metrics = np.zeros((2,num_port))
   weights_matrix = []
